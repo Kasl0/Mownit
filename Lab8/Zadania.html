@@ -14636,17 +14636,20 @@ Nastepnie rozwiąż równanie Ax=b trzema metodami:</p>
     <span class="k">return</span> <span class="n">AF</span> \ <span class="n">b</span>
 <span class="n">end</span>
 
-<span class="n">println</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">method_1</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">))</span>
-<span class="n">println</span><span class="p">((</span><span class="nd">@timed</span> <span class="n">method_1</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="s2">&quot; s&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;inv()&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;Średnia z różnicy wektorów: &quot;</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">method_1</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">))</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;Czas wykonania: &quot;</span><span class="p">,</span> <span class="p">(</span><span class="nd">@timed</span> <span class="n">method_1</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="s2">&quot; s&quot;</span><span class="p">)</span>
 <span class="n">println</span><span class="p">()</span>
 
-<span class="n">println</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">method_2</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">))</span>
-<span class="n">println</span><span class="p">((</span><span class="nd">@timed</span> <span class="n">method_2</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="s2">&quot; s&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;Średnia z różnicy wektorów: &quot;</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">method_2</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">))</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;Czas wykonania: &quot;</span><span class="p">,</span> <span class="p">(</span><span class="nd">@timed</span> <span class="n">method_2</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="s2">&quot; s&quot;</span><span class="p">)</span>
 <span class="n">println</span><span class="p">()</span>
 
 <span class="n">Af</span> <span class="o">=</span> <span class="n">factorize</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="n">println</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">method_3</span><span class="p">(</span><span class="n">Af</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">))</span>
-<span class="n">println</span><span class="p">((</span><span class="nd">@timed</span> <span class="n">method_3</span><span class="p">(</span><span class="n">Af</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="s2">&quot; s&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;factorize()&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;Średnia z różnicy wektorów: &quot;</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">method_3</span><span class="p">(</span><span class="n">Af</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span><span class="p">))</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;Czas wykonania: &quot;</span><span class="p">,</span> <span class="p">(</span><span class="nd">@timed</span> <span class="n">method_3</span><span class="p">(</span><span class="n">Af</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="s2">&quot; s&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14666,14 +14669,17 @@ Nastepnie rozwiąż równanie Ax=b trzema metodami:</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>6.9928784984796264e-15
-0.0238558 s
+<pre>inv()
+Średnia z różnicy wektorów: 3.8356817722018375e-15
+Czas wykonania: 0.0185084 s
 
--2.2851208772434184e-16
-0.0073339 s
+\
+Średnia z różnicy wektorów: 4.0351034145957866e-16
+Czas wykonania: 0.0068887 s
 
--2.2851208772434184e-16
-0.000299 s
+factorize()
+Średnia z różnicy wektorów: 4.0351034145957866e-16
+Czas wykonania: 0.0003133 s
 </pre>
 </div>
 </div>
@@ -14876,9 +14882,9 @@ Porównaj wyniki z tymi otrzymanymi poprzednio.</p>
 <span class="n">A</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
 <span class="n">AF</span> <span class="o">=</span> <span class="n">factorize</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="n">println</span><span class="p">(</span><span class="n">AF</span><span class="o">.</span><span class="n">R</span>\<span class="p">((</span><span class="n">Transpose</span><span class="p">(</span><span class="n">AF</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span><span class="o">*</span><span class="n">naive_results</span><span class="o">.</span><span class="n">time_mean</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]))</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;Policzone współczynniki: &quot;</span><span class="p">,</span> <span class="n">AF</span><span class="o">.</span><span class="n">R</span>\<span class="p">((</span><span class="n">Transpose</span><span class="p">(</span><span class="n">AF</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span><span class="o">*</span><span class="n">naive_results</span><span class="o">.</span><span class="n">time_mean</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]))</span>
 
-<span class="n">println</span><span class="p">(</span><span class="n">fit</span><span class="p">(</span><span class="n">naive_results</span><span class="o">.</span><span class="n">matrix_size</span><span class="p">,</span> <span class="n">naive_results</span><span class="o">.</span><span class="n">time_mean</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;Wielomian uzyskany poprzez fit(): &quot;</span><span class="p">,</span> <span class="n">fit</span><span class="p">(</span><span class="n">naive_results</span><span class="o">.</span><span class="n">matrix_size</span><span class="p">,</span> <span class="n">naive_results</span><span class="o">.</span><span class="n">time_mean</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14898,8 +14904,8 @@ Porównaj wyniki z tymi otrzymanymi poprzednio.</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[3.7735764753691986e-7, -3.30873976075646e-5, 0.0008492623737581339, 0.00895521027387744]
-0.00895521 + 0.000849262*x - 3.30874e-5*x^2 + 3.77358e-7*x^3
+<pre>Policzone współczynniki: [3.7735764753691986e-7, -3.30873976075646e-5, 0.0008492623737581339, 0.00895521027387744]
+Wielomian uzyskany poprzez fit(): 0.00895521 + 0.000849262*x - 3.30874e-5*x^2 + 3.77358e-7*x^3
 </pre>
 </div>
 </div>
@@ -14950,19 +14956,15 @@ Porównaj wyniki z tymi otrzymanymi poprzednio.</p>
         <span class="n">Q</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">qr</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
     <span class="n">end</span>
 
-    <span class="n">eigenvalues</span> <span class="o">=</span> <span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">eigenvalues</span>
+    <span class="k">return</span> <span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 <span class="n">end</span>
 
 <span class="c1"># Przykładowa macierz</span>
 <span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">10</span><span class="p">]</span>
 
-<span class="c1"># Znajdowanie wartości własnych za pomocą faktoryzacji QR</span>
-<span class="n">eigenvalues</span> <span class="o">=</span> <span class="n">qr_eigenvalues</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-
 <span class="c1"># Wyświetlenie wartości własnych</span>
-<span class="n">println</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;Wartości własne poprzez faktoryzację QR: &quot;</span><span class="p">,</span> <span class="n">qr_eigenvalues</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+<span class="n">println</span><span class="p">(</span><span class="s2">&quot;Wartości własne poprzez wbudowaną funkcję: &quot;</span><span class="p">,</span> <span class="n">eigvals</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14982,7 +14984,8 @@ Porównaj wyniki z tymi otrzymanymi poprzednio.</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[16.705972325154963, -0.9051889217021699, 0.19921659654722154]
+<pre>Wartości własne poprzez faktoryzację QR: [16.705972325154963, -0.9051889217021699, 0.19921659654722154]
+Wartości własne poprzez wbudowaną funkcję: [-0.9057401795217589, 0.1982468633970087, 16.707493316124744]
 </pre>
 </div>
 </div>
